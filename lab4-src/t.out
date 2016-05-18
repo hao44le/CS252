@@ -1,0 +1,31 @@
+execve("./hello-syscall", ["hello-syscall"], [/* 36 vars */]) = 0
+brk(0)                                  = 0x681000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f80cbaf7000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=186250, ...}) = 0
+mmap(NULL, 186250, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f80cbac9000
+close(3)                                = 0
+open("/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p\t\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1972576, ...}) = 0
+mmap(NULL, 3800832, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f80cb537000
+mprotect(0x7f80cb6ce000, 2093056, PROT_NONE) = 0
+mmap(0x7f80cb8cd000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x196000) = 0x7f80cb8cd000
+mmap(0x7f80cb8d3000, 16128, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f80cb8d3000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f80cbac8000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f80cbac7000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f80cbac6000
+arch_prctl(ARCH_SET_FS, 0x7f80cbac7700) = 0
+mprotect(0x7f80cb8cd000, 16384, PROT_READ) = 0
+mprotect(0x600000, 4096, PROT_READ)     = 0
+mprotect(0x7f80cbaf8000, 4096, PROT_READ) = 0
+munmap(0x7f80cbac9000, 186250)          = 0
+write(1, "Hello World without syscall\n", 28) = 28
+write(1, "Hello World with syscall\n", 25) = 25
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 30), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f80cbaf6000
+write(1, "Hello World with printf\n", 24) = 24
+exit_group(24)                          = ?
++++ exited with 24 +++

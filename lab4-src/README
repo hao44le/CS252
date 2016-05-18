@@ -1,0 +1,15 @@
+Part1 : Thread Creation
+	Step 3 : I got "A","B" or "C" showing up randomly.
+	Step 5 : thr2.cc only prints infinite number of "C", because the main thread stucks on the printC("C") method call. At method printC(), there is a infinite loop and will never return. So the program won't even have chance to create the thread.
+
+Part3: Spin Locks
+	Step 4 : 					Table
+					System  (Kernel) Time | User Time  |	Real Time
+	pthread_mutex (count)	 		0.66s	       |  1.16s	     |  1.17s
+	spin lock (count_spin with thr_yield)	  0.08s        |  1.08s     |  0.71s  
+	spin_lock (count_spin without thr_yield) 0.00s	|  8.72s     |  4.44s  	 
+
+	Question 1 :  spin_lock without thr_yield call definitely takes much more user time than spin_lock with thr_yield method. thr_yield method will make a thread gives up cpu, so if a thread does not give up the cpu, some of the execution times are wasted.
+	
+	Question 2 :  count takes more system time than spin_lock with thr_yield.Because pthread_mutex_lock needs to call wait(), however splin_lock uses spin_lock which is faster than wait()
+			

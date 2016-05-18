@@ -1,0 +1,17 @@
+
+---- running test5 ---
+NO FREES:
+FreeList: [offset:0,size:2097200]->
+FREE RIGHT:
+FreeList: [offset:0,size:2097200]->
+FREE LEFT:
+FreeList: [offset:0,size:2097200]->
+
+-------------------
+HeapSize:	4194448 bytes
+# mallocs:	2
+# reallocs:	0
+# callocs:	0
+# frees:	2
+
+-------------------

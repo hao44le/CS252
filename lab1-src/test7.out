@@ -1,0 +1,19 @@
+
+---- Running test7 ---
+Allocate many objects
+FreeList: [offset:0,size:2097200]->
+----------- Free even ---------------
+FreeList: [offset:0,size:2097200]->
+------------ Free odd ----------------
+FreeList: [offset:0,size:2097200]->
+---- Allocate 100 blocks ----
+FreeList: [offset:0,size:2097200]->
+
+-------------------
+HeapSize:	5137248 bytes
+# mallocs:	20000
+# reallocs:	0
+# callocs:	0
+# frees:	10000
+
+-------------------
